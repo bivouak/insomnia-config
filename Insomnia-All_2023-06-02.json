@@ -1,0 +1,358 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-06-02T09:09:01.089Z",
+  "__export_source": "insomnia.desktop.app:v2022.5.1",
+  "resources": [
+    {
+      "_id": "req_3cbfeb63a1f84f6181850e310676625a",
+      "parentId": "fld_c063f18e21a6417d8d47116c9edd68b2",
+      "modified": 1685696214815,
+      "created": 1685524108342,
+      "url": "{{ _.host }}/login.json",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"{{ _.username }}\",\n\t\"password\": \"{{ _.password }}\",\n\t\"is_patient\":false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7d48e6f516054aa992bb199bd5c3c408"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1685524181895,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c063f18e21a6417d8d47116c9edd68b2",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685696863350,
+      "created": 1685524255448,
+      "name": "AUTH 🔐",
+      "description": "Contains requests to authenticate a user",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1685524255448,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "parentId": null,
+      "modified": 1685524054190,
+      "created": 1685524003563,
+      "name": "PRO",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d5745248c7554d9a8b0f23a99933f025",
+      "parentId": "fld_c063f18e21a6417d8d47116c9edd68b2",
+      "modified": 1685696222339,
+      "created": 1685524273863,
+      "url": "{{ _.host }}/api/accounts/send_auth_code",
+      "name": "2FA mode",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"two_factor_auth_method\":\"email\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7d48e6f516054aa992bb199bd5c3c408"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1683071039114.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_baea2cbedf104e3ea27f7594f3a81c7c",
+      "parentId": "fld_c063f18e21a6417d8d47116c9edd68b2",
+      "modified": 1685696225636,
+      "created": 1685524279903,
+      "url": "{{ _.host }}/login/challenge",
+      "name": "2FA challenge",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"two_factor_auth_method\":\"email\",\"auth_code\":\"123456\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7d48e6f516054aa992bb199bd5c3c408"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681844467724.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7af877b333724949a432bcfe001e9a50",
+      "parentId": "fld_c063f18e21a6417d8d47116c9edd68b2",
+      "modified": 1685609010898,
+      "created": 1685608971068,
+      "url": "{{ _.host }}/deconnexion",
+      "name": "logout",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1685608971068,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_49961f37c8d640bcbea88a0f433ffc0c",
+      "parentId": "fld_de0c67382fa841db8f8e6b0afeb92aea",
+      "modified": 1685608655221,
+      "created": 1685524458101,
+      "url": "{{ _.host }}/admin/organizations",
+      "name": "Farming",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1685524458101,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_de0c67382fa841db8f8e6b0afeb92aea",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685609030579,
+      "created": 1685608653350,
+      "name": "Admin",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1685608653350,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_399ebc36752a43a1a9d25d93e7c292f1",
+      "parentId": "fld_d246d6a1593c406388cd89a6247ff738",
+      "modified": 1685608703896,
+      "created": 1685608665152,
+      "url": "{{ _.host }}/configuration/visit_motives",
+      "name": "VM config",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1685608665152,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_d246d6a1593c406388cd89a6247ff738",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685608661927,
+      "created": 1685608661927,
+      "name": "PRO",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1685608661927,
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_e47d9f0a9b586ef3a05e41f2349c23bdf7c05985",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685696198647,
+      "created": 1685524003570,
+      "name": "Base Environment",
+      "data": {
+        "host": "https://pro-dev.doctolib.fr:3000",
+        "password": "XXX"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "host",
+          "password"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1685524003570,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_e47d9f0a9b586ef3a05e41f2349c23bdf7c05985",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685696233852,
+      "created": 1685524003572,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "__cf_bm",
+          "value": "i7O_GaCjAyHpum5J7kLSYIcKeh7EkfeEZxJlUaYvxEI-1685696123-0-Ad4E2gZQinYa5DDJW6IOaUStam0J1IYO8rn8No3mtjz66KHfWd9q4uXr5Wdle+3iFzo3O7Pa4XUcqd+Ftv7L7/gMcvV/xOFrnl1+Xsi4mys4",
+          "expires": "2023-06-02T09:25:23.000Z",
+          "domain": "doctolib.fr",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "extensions": [
+            "SameSite=None"
+          ],
+          "hostOnly": false,
+          "creation": "2023-06-02T08:55:24.053Z",
+          "lastAccessed": "2023-06-02T08:55:24.053Z",
+          "id": "9333592445293757"
+        },
+        {
+          "key": "ssid",
+          "value": "ub00unk-X4M9Q-rNBdvN",
+          "expires": "2024-07-02T08:56:58.000Z",
+          "domain": "pro-dev.doctolib.fr",
+          "path": "/",
+          "hostOnly": true,
+          "creation": "2023-06-02T08:56:59.005Z",
+          "lastAccessed": "2023-06-02T08:56:59.005Z",
+          "id": "39517903661838694"
+        },
+        {
+          "key": "esid",
+          "value": "529hTGFVkj0OHNDl25y2ZneH",
+          "domain": "pro-dev.doctolib.fr",
+          "path": "/",
+          "hostOnly": true,
+          "creation": "2023-06-02T08:56:59.005Z",
+          "lastAccessed": "2023-06-02T08:56:59.005Z",
+          "id": "8931650442480539"
+        },
+        {
+          "key": "_doctolib_session",
+          "value": "HRmfb%2BvHcKDGIbIW40ZHSCIzodkSaFJlMdGz60UZ%2BYkyT8jHBEe3raxwf6jUWnfYEa3gCv6CyC81lm9STsinh%2BUEgU2X3nav9yn2at%2Fcgz%2B43XdxBWqzlL7v%2BX2jIRhIKrarB7vBps27nUAQG%2FHNY7stDhA3VST1yI0o5u7vYeOQohRAGEuR2m5C4f0AGSjvXx7sRaEOxREffKUTUI6z%2Bxh89Q1gmMytu4e2YJL%2Ba8I0Q24bof2bCJPxrnIC94vIyvkGAgxG0GxCLpkEFjYk%2BSJeBY96q66pGCyw7IqaG0SPbcP47d%2FD5btYAxgYID16lih2xNPqoKCiFeyDTVVXd2ASEAIDjzfvumofG2jo2bs38bu%2BIF3WdJJFY7tbfzPIrXy7KaIQ26QPOafLrxGkpfs3aguTKEXUVYdIfPTIpPQagyvo8VyFaU3eiM0yo%2F%2BgL2j%2BQSXSpbI%2FvckGtPh9xdxveDBlYSKYXX%2BPWKd2RwDPMu7RB2XVgcze8Zc5er8PBG7uu7tdRriTEJ%2FY6w2Bw88UprhD0DekWSyK6oeXwgZscfeb%2F7uaPQF%2B0NGYLlN7Jv45qeKJG9EEXbMKOpEePUH1IOwU7vh%2Fubfkt5s%2F%2FzauKidIBnwtAPRL4CKC1g5Ins4yJAmDbIzWO57em10uvY9aXJ4qY4goNs6DfZVGpvrruKtrj1yjMdyEKUeKXaddnd1n%2BWNFXK%2BVbVGQalmC9pFva9J%2BcuQ0RtvZeGLXrgxF%2BoMCLoi8wpQMuVqc7PydyBovYEsY3WmSH%2FxrWCrnb8jcE4nJjLVipF%2BgwqBurKxxpRinpTbx0crgEJeyLhbB1R3Zy8mguN2JaFf%2BpaBqu6VYJXCz6CxSyZMf4a%2FLEONMZX39rCoAv42yOZNidtnvyG%2BtrGHnvXK3ypiD7BgooqQ0LiafKPWnW7OWXA0pGmHlGZzYYWhZ8x9FGSwi6b9Gc5N3MlGK%2FF1%2BP8UdQy%2BgVSw1OSLhJCAz4Bml23LaaCvivsh6e%2BThbtdtBapHqf1HgRVsYN0cM%2F93VjRfKxiGH3CsssW5cTLpJBzP5OVQmaj4G%2FArf%2FmTVPquHHqb%2BdCQLfFU6IwSeKoaoLZ6CZqeLEVIFhlBAFSRAAExfMxmjcrD5GRo%2BHl3PW1HWBGqqr%2BtMF%2BsNm5E%2BgkNNYUfFntyUNdnzsG2nZ5SdYUTFTvvbWfzDPwlIdJQ7UG8piwVyh4XW6x1te6vwLfI8Fe64eLEVVA%3D--vNuoAUtSHDzNMkgX--fEp9mDQGC4uhE0Ciz%2BiY8Q%3D%3D",
+          "domain": "pro-dev.doctolib.fr",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2023-06-02T08:56:59.005Z",
+          "lastAccessed": "2023-06-02T08:57:13.852Z",
+          "id": "6974561451938703"
+        },
+        {
+          "key": "pin_login",
+          "value": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaUI3SW1GalkyOTFiblJmYVdSeklqcGJNelEyTnpnd05ETTRYWDBHT2daRlZBPT0iLCJleHAiOiIyMDIzLTA4LTMxVDA4OjU3OjA3LjAwMloiLCJwdXIiOiJjb29raWUucGluX2xvZ2luIn19--33b4c24cb507b7720b119a4d2a0a732c67b6d806",
+          "expires": "2023-08-31T08:57:07.000Z",
+          "domain": "pro-dev.doctolib.fr",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2023-06-02T08:57:07.051Z",
+          "lastAccessed": "2023-06-02T08:57:07.051Z",
+          "id": "11111203318426321"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_1f89bd5131734e7bbb1824ed9b92e584",
+      "parentId": "wrk_0c1b5d4cac4d498496c3d65a97cdbe31",
+      "modified": 1685524003566,
+      "created": 1685524003566,
+      "fileName": "PRO (demo)",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_d2ece68bedd943ad821bd3c6fd9730aa",
+      "parentId": "env_e47d9f0a9b586ef3a05e41f2349c23bdf7c05985",
+      "modified": 1685696917172,
+      "created": 1685524060809,
+      "name": "[pro-dev] Jessy",
+      "data": {
+        "username": "jessy@doctolib.com"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "username"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 0,
+      "_type": "environment"
+    },
+    {
+      "_id": "env_68a827ca351943148b89634391f8f31b",
+      "parentId": "env_e47d9f0a9b586ef3a05e41f2349c23bdf7c05985",
+      "modified": 1685696911061,
+      "created": 1685608598492,
+      "name": "[pro-dev] Harley Quinn",
+      "data": {
+        "username": "account_harley_quinn@email.com"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "username"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1,
+      "_type": "environment"
+    }
+  ]
+}
